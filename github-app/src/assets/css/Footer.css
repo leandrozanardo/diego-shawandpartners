@@ -1,0 +1,10 @@
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-nav{
+    background-color: #333;
+    color: #fff;
+}
