@@ -1,9 +1,13 @@
-import React, {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faTriangleExclamation, faEye} from "@fortawesome/free-solid-svg-icons";
-import {Modal, Button} from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTriangleExclamation,
+  faEye,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import { Modal, Button } from "react-bootstrap";
 import defaultAvatar from "../src/assets/img/defaultAvatar.png";
 
 interface UserDetails {
@@ -21,7 +25,7 @@ interface Repository {
 }
 
 function UserDetails() {
-  const {username} = useParams<{username: string}>();
+  const { username } = useParams<{ username: string }>();
   const [user, setUser] = useState<UserDetails | null>(null);
   const [repositories, setRepositories] = useState<Repository[]>([]);
   const [loadingError, setLoadingError] = useState(false);
@@ -102,7 +106,9 @@ function UserDetails() {
                   </p>
                   <p className="card-text">
                     <strong>Profile URL:</strong>{" "}
-                    <a target="_blank" href={user.html_url}>{user.html_url}</a>
+                    <a target="_blank" href={user.html_url}>
+                      {user.html_url}
+                    </a>
                   </p>
                   <p className="card-text">
                     <strong>Creation Date:</strong>{" "}
@@ -118,8 +124,7 @@ function UserDetails() {
                     onClick={() => setShowModal(true)}
                     className="btn-repositories"
                   >
-                    <FontAwesomeIcon icon={faEye} className="me-1" />{" "}
-                    View Repositories
+                    <FontAwesomeIcon icon={faEye} className="me-1" /> View Repositories
                   </Button>
                 </div>
               </div>
@@ -171,6 +176,12 @@ function UserDetails() {
             </Button>
           </Modal.Footer>
         </Modal>
+
+        <div className="mt-4">
+          <Link to="/" className="btn btn-secondary">
+            <FontAwesomeIcon icon={faChevronLeft} className="me-1" /> Back
+          </Link>
+        </div>
       </div>
     </main>
   );
