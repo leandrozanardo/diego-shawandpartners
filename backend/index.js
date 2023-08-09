@@ -10,6 +10,11 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
+// Rota padrão
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
 app.get('/api/users', async (req, res) => {
   try {
     const since = req.query.since || 0;
