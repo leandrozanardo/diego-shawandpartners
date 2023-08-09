@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react";
-import {Link} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
@@ -36,10 +36,7 @@ function UsersList() {
           setUsers(data.users);
         } else {
           setError(true);
-          console.error(
-            "API response does not contain an array of users:",
-            data
-          );
+          console.error("API response does not contain an array of users:", data);
         }
       })
       .catch((error) => {
@@ -74,24 +71,28 @@ function UsersList() {
           <>
             <div className="row">
               <div className="col d-flex justify-content-center">
-                <div className="table-responsive">
-                  <table
-                    className="table table-sm table-striped"
-                    style={{width: "600px"}}
-                  >
-                    <thead>
-                      <tr>
-                        <th className="text-center">ID</th>
-                        <th>Profile Picture</th>
-                        <th>Name</th>
-                        <th className="text-center" style={{width: "160px"}}>
-                          Details
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {users && Array.isArray(users) ? (
-                        users.map((user) => (
+                {users.length === 0 ? (
+                  <div className="spinner-border text-secondary" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                ) : (
+                  <div className="table-responsive">
+                    <table
+                      className="table table-sm table-striped"
+                      style={{ width: "600px" }}
+                    >
+                      <thead>
+                        <tr>
+                          <th className="text-center">ID</th>
+                          <th  style={{ width: "136px" }}>Profile Picture</th>
+                          <th>Name</th>
+                          <th className="text-center" style={{ width: "160px" }}>
+                            Details
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {users.map((user) => (
                           <tr key={user.id}>
                             <td className="align-middle text-center">
                               <strong>{user.id}</strong>
@@ -99,9 +100,9 @@ function UsersList() {
                             <td className="align-middle">
                               <img
                                 src={user.avatar_url}
-                                className="card-img-top img-fluid rounded "
+                                className="card-img-top img-fluid rounded"
                                 alt="User Avatar"
-                                style={{ width: "50px"}}
+                                style={{ width: "50px" }}
                                 onError={(e) => {
                                   (e.target as HTMLImageElement).src =
                                     defaultAvatar;
@@ -122,15 +123,11 @@ function UsersList() {
                               </Link>
                             </td>
                           </tr>
-                        ))
-                      ) : (
-                        <tr>
-                          <td colSpan={3}>No users available</td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </table>
-                </div>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </div>
             </div>
 
