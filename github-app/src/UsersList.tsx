@@ -127,7 +127,7 @@ function UsersList() {
                   disabled={currentPage === 1}
                 >
                   <FontAwesomeIcon className="me-1" icon={faChevronLeft} />{" "}
-                  Previous
+                  Prev
                 </button>
                 <span className="mx-3">Page {currentPage}</span>
                 <button
