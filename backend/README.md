@@ -54,4 +54,9 @@ npm test
 - Pagination for fetching users is supported through the "nextPageLink" in the response.
 - Ensure that the server is running when testing the endpoints.
 
+### Production api links
+
+https://shawandpartners-backend-x0fz.onrender.com/api/users
+https://shawandpartners-backend-x0fz.onrender.com/api/users/leandrozanardo/details
+https://shawandpartners-backend-x0fz.onrender.com/api/users/leandrozanardo/repos
 
