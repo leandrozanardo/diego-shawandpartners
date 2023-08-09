@@ -85,7 +85,7 @@ function UsersList() {
                         <tr>
                           <th className="text-center">ID</th>
                           <th  style={{ width: "136px" }}>Profile Picture</th>
-                          <th>Name</th>
+                          <th>Username</th>
                           <th className="text-center" style={{ width: "160px" }}>
                             Details
                           </th>
@@ -119,7 +119,7 @@ function UsersList() {
                                   icon={faEye}
                                   className="me-1"
                                 />{" "}
-                                View Profile
+                                Show Profile
                               </Link>
                             </td>
                           </tr>

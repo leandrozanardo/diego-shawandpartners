@@ -102,7 +102,7 @@ function UserDetails() {
                   </p>
                   <p className="card-text">
                     <strong>Profile URL:</strong>{" "}
-                    <a href={user.html_url}>{user.html_url}</a>
+                    <a target="_blank" href={user.html_url}>{user.html_url}</a>
                   </p>
                   <p className="card-text">
                     <strong>Creation Date:</strong>{" "}
