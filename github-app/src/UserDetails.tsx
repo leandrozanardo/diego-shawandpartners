@@ -118,8 +118,8 @@ function UserDetails() {
                     onClick={() => setShowModal(true)}
                     className="btn-repositories"
                   >
-                    View Repositories{" "}
                     <FontAwesomeIcon icon={faEye} className="me-1" />{" "}
+                    View Repositories
                   </Button>
                 </div>
               </div>
