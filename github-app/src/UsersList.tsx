@@ -63,7 +63,7 @@ function UsersList() {
                 />
               </h2>
               <p>We were unable to load the user list.</p>
-              <p>Please contact your system administrator.</p>
+              <p>Please contact the system administrator.</p>
             </div>
           </div>
         ) : (
