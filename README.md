@@ -1,4 +1,4 @@
-# Shawn and Partners CRM Test - Fullstack Developer
+# Shawn and Partners CRM - Leandro Zanardo Fullstack Developer Test
 
 Welcome to the Shawn and Partners CRM Fullstack Developer test project!
 
@@ -24,13 +24,19 @@ Read the project documentation in their respective folders to run it.
 
 ### Backend
 
-Instructions to run the application are in "backend/README.md"
+Instructions to run the api are in "backend/README.md"
 
 ### Frontend
 
 Instructions to run the application are in "github-app/README.md"
 
-## API Documentation
+### API Documentation
 
 There is a file with a collection at the root of the project to test endpoints using postman.
 "shawandpartners.postman_collection.json"
+
+#### Special thanks
+Thank you for the opportunity to participate in this test. I've been working with web development for several years, but I still haven't had the opportunity to work with NodeJS or React JS using typescript. It was quite challenging but a lot of fun, I love learning new technologies and creating interesting projects.
+I know I still have little experience with this stack but it's the one I'd like to work with and I just need an opportunity, you'll see in my test that I'm fully capable.
+I hope you like my project and if possible to be part of the team soon.
+Have a great day!

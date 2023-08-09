@@ -38,8 +38,14 @@ Repositories Component: Lists user repositories with their IDs, names, and URLs.
 API Endpoints
 The front-end app communicates with the following backend API endpoints:
 
+GET api/users: Fetches users information
 GET /api/users/:username/details: Fetches user details.
 GET /api/users/:username/repos: Fetches user repositories.
+
+- Production api links
+https://shawandpartners-backend-x0fz.onrender.com/api/users
+https://shawandpartners-backend-x0fz.onrender.com/api/users/leandrozanardo/details
+https://shawandpartners-backend-x0fz.onrender.com/api/users/leandrozanardo/repos
 
 ### Styling
 
@@ -59,5 +65,7 @@ To build execute the following command:
 
 npm run build
 
-For production environments it is necessary to change the REACT_APP_API_URL path in the .ENV file
+- For production environments it is necessary to change the REACT_APP_API_URL path in the .ENV file
+
+- In my project it is REACT_APP_API_URL=https://shawandpartners-backend-x0fz.onrender.com/api
 
