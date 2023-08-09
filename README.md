@@ -18,6 +18,25 @@ This project was developed by Leandro Zanardo [Linkedin](https://www.linkedin.co
 
 The project can be found on GitHub: [GitHub Repository](https://github.com/leandrozanardo/diego-shawandpartners)
 
+## Links
+
+- Live App
+https://shawandpartners-app.onrender.com/
+
+- Live API
+https://shawandpartners-backend-x0fz.onrender.com/api/users
+https://shawandpartners-backend-x0fz.onrender.com/api/users/leandrozanardo/details
+https://shawandpartners-backend-x0fz.onrender.com/api/users/leandrozanardo/repos
+
+- Repository
+https://github.com/leandrozanardo/diego-shawandpartners
+
+- Backend Repository
+https://github.com/leandrozanardo/diego-shawandpartners/tree/main/backend
+
+- Frontend Repository
+https://github.com/leandrozanardo/diego-shawandpartners/tree/main/github-app
+
 ## Getting Started
 
 Read the project documentation in their respective folders to run it.
