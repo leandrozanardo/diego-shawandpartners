@@ -41,12 +41,6 @@ The front-end app communicates with the following backend API endpoints:
 GET /api/users/:username/details: Fetches user details.
 GET /api/users/:username/repos: Fetches user repositories.
 
-
-### Testing (Optional)
-To run tests, execute the following command:
-
-npm test
-
 ### Styling
 
 The project uses Bootstrap for styling. You can customize styles in the src/css directory.
@@ -61,4 +55,9 @@ Verify the backend API server is running.
 
 ### Production
 
+To build execute the following command:
+
+npm run build
+
 For production environments it is necessary to change the REACT_APP_API_URL path in the .ENV file
+
