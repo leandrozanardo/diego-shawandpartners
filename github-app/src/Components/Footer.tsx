@@ -8,7 +8,7 @@ const Footer = () => {
         <p className=" w-100 text-center text-light m-0">
           ©2023. Developed by{" "}
           <a
-            href="https://github.com/leandrozanardo/"
+            href="https://www.linkedin.com/in/leandro-zanardo/"
             className="text-light"
             target="_blank"
             rel="noopener noreferrer"
