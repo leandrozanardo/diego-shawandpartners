@@ -402,7 +402,7 @@ function UserDetails() {
                   icon={faTriangleExclamation}
                 />
               </h2>
-              <p>We were unable to load the user list.</p>
+              <p>We were unable to load the user details.</p>
               <p>Please contact your system administrator.</p>
             </div>
           </div>
