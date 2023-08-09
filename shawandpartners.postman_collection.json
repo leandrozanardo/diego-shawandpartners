@@ -27,6 +27,26 @@
 			"response": []
 		},
 		{
+			"name": "Get Users Production",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get User Details",
 			"request": {
 				"method": "GET",
@@ -49,7 +69,51 @@
 			"response": []
 		},
 		{
+			"name": "Get User Details Production",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/users/leandrozanardo/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"users",
+						"leandrozanardo",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get User Repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/users/leandrozanardo/repos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"users",
+						"leandrozanardo",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Repos Production",
 			"request": {
 				"method": "GET",
 				"header": [],
