@@ -9,10 +9,12 @@ import {
   faTriangleExclamation,
   faEye,
 } from "@fortawesome/free-solid-svg-icons";
+import defaultAvatar from "../src/assets/img/defaultAvatar.png";
 
 interface User {
   id: number;
   login: string;
+  avatar_url: string;
 }
 
 const ITEMS_PER_PAGE = 20;
@@ -24,7 +26,9 @@ function UsersList() {
 
   useEffect(() => {
     fetch(
-      `${process.env.REACT_APP_API_URL}/users?since=${(currentPage - 1) * ITEMS_PER_PAGE}`
+      `${process.env.REACT_APP_API_URL}/users?since=${
+        (currentPage - 1) * ITEMS_PER_PAGE
+      }`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -78,9 +82,10 @@ function UsersList() {
                     <thead>
                       <tr>
                         <th className="text-center">ID</th>
+                        <th>Profile Picture</th>
                         <th>Name</th>
                         <th className="text-center" style={{width: "160px"}}>
-                          Profile
+                          Details
                         </th>
                       </tr>
                     </thead>
@@ -90,6 +95,18 @@ function UsersList() {
                           <tr key={user.id}>
                             <td className="align-middle text-center">
                               <strong>{user.id}</strong>
+                            </td>
+                            <td className="align-middle">
+                              <img
+                                src={user.avatar_url}
+                                className="card-img-top img-fluid rounded "
+                                alt="User Avatar"
+                                style={{ width: "50px"}}
+                                onError={(e) => {
+                                  (e.target as HTMLImageElement).src =
+                                    defaultAvatar;
+                                }}
+                              />
                             </td>
                             <td className="align-middle">{user.login}</td>
                             <td className="align-middle text-center">
@@ -126,8 +143,7 @@ function UsersList() {
                   }
                   disabled={currentPage === 1}
                 >
-                  <FontAwesomeIcon className="me-1" icon={faChevronLeft} />{" "}
-                  Prev
+                  <FontAwesomeIcon className="me-1" icon={faChevronLeft} /> Prev
                 </button>
                 <span className="mx-3">Page {currentPage}</span>
                 <button
