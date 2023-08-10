@@ -134,25 +134,36 @@ function UsersList() {
                         </tbody>
                       </table>
                     </div>
-                    <div className="my-4"></div>
-                    <button
-                      className="btn btn-secondary btn-sm"
-                      onClick={() =>
-                        setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))
-                      }
-                      disabled={currentPage === 1}
-                    >
-                      <FontAwesomeIcon className="me-1" icon={faChevronLeft} />{" "}
-                      Prev
-                    </button>
-                    <span className="mx-3">Page {currentPage}</span>
-                    <button
-                      className="btn btn-secondary btn-sm"
-                      onClick={() => setCurrentPage((prevPage) => prevPage + 1)}
-                    >
-                      Next
-                      <FontAwesomeIcon className="ms-1" icon={faChevronRight} />
-                    </button>
+                    <div className="my-4 d-flex justify-content-center">
+                      <button
+                        className="btn btn-secondary btn-sm"
+                        onClick={() =>
+                          setCurrentPage((prevPage) =>
+                            Math.max(prevPage - 1, 1)
+                          )
+                        }
+                        disabled={currentPage === 1}
+                      >
+                        <FontAwesomeIcon
+                          className="me-1"
+                          icon={faChevronLeft}
+                        />{" "}
+                        Prev
+                      </button>
+                      <span className="mx-3">Page {currentPage}</span>
+                      <button
+                        className="btn btn-secondary btn-sm"
+                        onClick={() =>
+                          setCurrentPage((prevPage) => prevPage + 1)
+                        }
+                      >
+                        Next
+                        <FontAwesomeIcon
+                          className="ms-1"
+                          icon={faChevronRight}
+                        />
+                      </button>
+                    </div>
                   </div>
                 )}
               </div>
