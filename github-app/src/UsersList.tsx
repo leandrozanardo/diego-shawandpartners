@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
@@ -36,7 +36,10 @@ function UsersList() {
           setUsers(data.users);
         } else {
           setError(true);
-          console.error("API response does not contain an array of users:", data);
+          console.error(
+            "API response does not contain an array of users:",
+            data
+          );
         }
       })
       .catch((error) => {
@@ -76,80 +79,82 @@ function UsersList() {
                     <span className="visually-hidden">Loading...</span>
                   </div>
                 ) : (
-                  <div className="table-responsive">
-                    <table
-                      className="table table-sm table-striped"
-                      style={{ width: "600px" }}
-                    >
-                      <thead>
-                        <tr>
-                          <th className="text-center">ID</th>
-                          <th  style={{ width: "136px" }}>Profile Picture</th>
-                          <th>Username</th>
-                          <th className="text-center" style={{ width: "160px" }}>
-                            Details
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {users.map((user) => (
-                          <tr key={user.id}>
-                            <td className="align-middle text-center">
-                              <strong>{user.id}</strong>
-                            </td>
-                            <td className="align-middle">
-                              <img
-                                src={user.avatar_url}
-                                className="card-img-top img-fluid rounded"
-                                alt="User Avatar"
-                                style={{ width: "50px" }}
-                                onError={(e) => {
-                                  (e.target as HTMLImageElement).src =
-                                    defaultAvatar;
-                                }}
-                              />
-                            </td>
-                            <td className="align-middle">{user.login}</td>
-                            <td className="align-middle text-center">
-                              <Link
-                                to={`/user/${user.login}`}
-                                className="btn btn-secondary"
-                              >
-                                <FontAwesomeIcon
-                                  icon={faEye}
-                                  className="me-1"
-                                />{" "}
-                                Show Profile
-                              </Link>
-                            </td>
+                  <div>
+                    <div className="table-responsive">
+                      <table
+                        className="table table-sm table-striped"
+                        style={{width: "600px"}}
+                      >
+                        <thead>
+                          <tr>
+                            <th className="text-center">ID</th>
+                            <th style={{width: "136px"}}>Profile Picture</th>
+                            <th>Username</th>
+                            <th
+                              className="text-center"
+                              style={{width: "160px"}}
+                            >
+                              Details
+                            </th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                        </thead>
+                        <tbody>
+                          {users.map((user) => (
+                            <tr key={user.id}>
+                              <td className="align-middle text-center">
+                                <strong>{user.id}</strong>
+                              </td>
+                              <td className="align-middle">
+                                <img
+                                  src={user.avatar_url}
+                                  className="card-img-top img-fluid rounded"
+                                  alt="User Avatar"
+                                  style={{width: "50px"}}
+                                  onError={(e) => {
+                                    (e.target as HTMLImageElement).src =
+                                      defaultAvatar;
+                                  }}
+                                />
+                              </td>
+                              <td className="align-middle">{user.login}</td>
+                              <td className="align-middle text-center">
+                                <Link
+                                  to={`/user/${user.login}`}
+                                  className="btn btn-secondary"
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faEye}
+                                    className="me-1"
+                                  />{" "}
+                                  Show Profile
+                                </Link>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="my-4"></div>
+                    <button
+                      className="btn btn-secondary btn-sm"
+                      onClick={() =>
+                        setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))
+                      }
+                      disabled={currentPage === 1}
+                    >
+                      <FontAwesomeIcon className="me-1" icon={faChevronLeft} />{" "}
+                      Prev
+                    </button>
+                    <span className="mx-3">Page {currentPage}</span>
+                    <button
+                      className="btn btn-secondary btn-sm"
+                      onClick={() => setCurrentPage((prevPage) => prevPage + 1)}
+                    >
+                      Next
+                      <FontAwesomeIcon className="ms-1" icon={faChevronRight} />
+                    </button>
                   </div>
                 )}
-              </div>
-            </div>
-
-            <div className="row my-4">
-              <div className="col d-flex justify-content-center">
-                <button
-                  className="btn btn-secondary btn-sm"
-                  onClick={() =>
-                    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))
-                  }
-                  disabled={currentPage === 1}
-                >
-                  <FontAwesomeIcon className="me-1" icon={faChevronLeft} /> Prev
-                </button>
-                <span className="mx-3">Page {currentPage}</span>
-                <button
-                  className="btn btn-secondary btn-sm"
-                  onClick={() => setCurrentPage((prevPage) => prevPage + 1)}
-                >
-                  Next
-                  <FontAwesomeIcon className="ms-1" icon={faChevronRight} />
-                </button>
               </div>
             </div>
           </>
